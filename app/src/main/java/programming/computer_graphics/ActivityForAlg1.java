@@ -35,6 +35,7 @@ public class ActivityForAlg1 extends AppCompatActivity implements View.OnTouchLi
             p2.y=y;
             count++;
         }
+
         @Override
         protected void onDraw(Canvas canvas) {
             canvas.drawColor(Color.WHITE);
