@@ -8,10 +8,32 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="programming.computer_graphics.MainActivity">
+    tools:context="programming.computer_graphics.MainActivity"
+    android:alwaysDrawnWithCache="false">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Параметрический алгоритм для отрезка"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Алгоритм Брезенхема для отрезка"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>
