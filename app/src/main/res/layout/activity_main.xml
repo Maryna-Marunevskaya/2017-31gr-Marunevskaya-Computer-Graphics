@@ -33,6 +33,27 @@
                 android:layout_height="wrap_content"
                 android:text="Алгоритм Брезенхема для отрезка"
                 android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Параметрический алгоритм для окружности"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Алгоритм Брезенхема для окружности"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Параметрический алгоритм для окружности(Бонус)"
+                android:textAllCaps="false" />
         </LinearLayout>
     </ScrollView>
 

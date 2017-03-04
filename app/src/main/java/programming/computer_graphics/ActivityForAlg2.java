@@ -59,7 +59,7 @@ public class ActivityForAlg2 extends AppCompatActivity implements View.OnTouchLi
                 float sf=2*dy-dx;
                 float sf1=2*dy;
                 float sf2=2*dx;
-                for(float i=0; i<=dx;i++){
+                for(float i=1; i<=dx;i++){
                     canvas.drawPoint(x,y,p);
                     while(sf>=0){
                         if(change){

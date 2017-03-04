@@ -15,8 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ActivityForAlg"/>
         <activity android:name=".ActivityForAlg1" />
         <activity android:name=".ActivityForAlg2"/>
+        <activity android:name=".ActivityForAlg3"/>
     </application>
 
 </manifest>

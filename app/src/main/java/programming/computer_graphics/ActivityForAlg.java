@@ -1,18 +1,22 @@
 package programming.computer_graphics;
 
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PointF;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 
 import static java.lang.Math.abs;
+import static java.lang.Math.sin;
+import static java.lang.Math.cos;
+import static java.lang.Math.sqrt;
 
-public class ActivityForAlg1 extends AppCompatActivity implements View.OnTouchListener{
+public class ActivityForAlg extends AppCompatActivity implements View.OnTouchListener{
     class DrawView extends View {
         Paint p;
         PointF p1, p2;
@@ -42,19 +46,30 @@ public class ActivityForAlg1 extends AppCompatActivity implements View.OnTouchLi
             p.setColor(Color.BLACK);
             p.setStrokeWidth(1);
             if(count==2) {
-                float absx=abs(p2.x-p1.x);
-                float absy=abs(p2.y-p1.y);
-                float spec=absx;
-                if(absy>absx){
-                    spec=absy;
-                }
-                float dx=(p2.x-p1.x)/spec;
-                float dy=(p2.y-p1.y)/spec;
-                float x=p1.x,y=p1.y;
-                for(int i=0; i<=(int)spec;i++){
-                    canvas.drawPoint(x,y,p);
-                    x+=dx;
-                    y+=dy;
+                float R=(float)sqrt((p2.x-p1.x)*(p2.x-p1.x)+(p2.y-p1.y)*(p2.y-p1.y));
+                float x2=p1.x;
+                float y2=p1.y+R;
+                float x1,y1;
+                for(int i=1; i<=360;i++) {
+                    x1 = x2;
+                    y1 = y2;
+                    x2 = (float) (R * sin(i * 1.0) + p1.x);
+                    y2 = (float) (R * cos(i * 1.0) + p1.y);
+
+                    float absx=abs(x2-x1);
+                    float absy=abs(y2-y1);
+                    float spec=absx;
+                    if(absy>absx){
+                        spec=absy;
+                    }
+                    float dx=(x2-x1)/spec;
+                    float dy=(y2-y1)/spec;
+                    float x=x1,y=y1;
+                    for(int j=0; j<(int)spec;j++){
+                        canvas.drawPoint(x,y,p);
+                        x+=dx;
+                        y+=dy;
+                    }
                 }
                 count=0;
             }

@@ -1,18 +1,19 @@
 package programming.computer_graphics;
 
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PointF;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 
-import static java.lang.Math.abs;
+import static java.lang.Math.sqrt;
 
-public class ActivityForAlg1 extends AppCompatActivity implements View.OnTouchListener{
+public class ActivityForAlg3 extends AppCompatActivity implements View.OnTouchListener{
     class DrawView extends View {
         Paint p;
         PointF p1, p2;
@@ -42,19 +43,18 @@ public class ActivityForAlg1 extends AppCompatActivity implements View.OnTouchLi
             p.setColor(Color.BLACK);
             p.setStrokeWidth(1);
             if(count==2) {
-                float absx=abs(p2.x-p1.x);
-                float absy=abs(p2.y-p1.y);
-                float spec=absx;
-                if(absy>absx){
-                    spec=absy;
-                }
-                float dx=(p2.x-p1.x)/spec;
-                float dy=(p2.y-p1.y)/spec;
-                float x=p1.x,y=p1.y;
-                for(int i=0; i<=(int)spec;i++){
-                    canvas.drawPoint(x,y,p);
-                    x+=dx;
-                    y+=dy;
+                float R=(float)sqrt((p2.x-p1.x)*(p2.x-p1.x)+(p2.y-p1.y)*(p2.y-p1.y));
+                float sp=(float)(R/sqrt(2.0));
+                for(float x=0; x<=sp;x++){
+                    float y=(float)(sqrt(R*R-x*x));
+                    canvas.drawPoint(p1.x+x,p1.y+y,p);
+                    canvas.drawPoint(p1.x+y,p1.y+x,p);
+                    canvas.drawPoint(p1.x+y,p1.y-x,p);
+                    canvas.drawPoint(p1.x+x,p1.y-y,p);
+                    canvas.drawPoint(p1.x-x,p1.y-y,p);
+                    canvas.drawPoint(p1.x-y,p1.y-x,p);
+                    canvas.drawPoint(p1.x-y,p1.y+x,p);
+                    canvas.drawPoint(p1.x-x,p1.y+y,p);
                 }
                 count=0;
             }
