@@ -19,6 +19,7 @@
         <activity android:name=".ActivityForAlg1" />
         <activity android:name=".ActivityForAlg2"/>
         <activity android:name=".ActivityForAlg3"/>
+        <activity android:name=".ActivityForAlg4"/>
     </application>
 
 </manifest>
