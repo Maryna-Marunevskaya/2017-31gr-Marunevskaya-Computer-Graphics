@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 
-import static java.lang.Math.abs;
 import static java.lang.Math.sqrt;
 
 public class ActivityForAlg4 extends AppCompatActivity implements View.OnTouchListener{
