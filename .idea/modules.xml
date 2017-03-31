@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/arcmenumodule/arcmenumodule.iml" filepath="$PROJECT_DIR$/arcmenumodule/arcmenumodule.iml" />
       <module fileurl="file://$PROJECT_DIR$/arcmodule/arcmodule.iml" filepath="$PROJECT_DIR$/arcmodule/arcmodule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simplearcmodule/simplearcmodule.iml" filepath="$PROJECT_DIR$/simplearcmodule/simplearcmodule.iml" />
     </modules>
   </component>
 </project>

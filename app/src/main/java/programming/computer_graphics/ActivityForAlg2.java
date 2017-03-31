@@ -90,7 +90,7 @@ public class ActivityForAlg2 extends AppCompatActivity implements View.OnTouchLi
             case MotionEvent.ACTION_DOWN:
                 if(i==0){
                     view.setP1(event.getX(),event.getY());
-                    i++;
+                    i+=1;
                 }
                 else{
                     view.setP2(event.getX(),event.getY());

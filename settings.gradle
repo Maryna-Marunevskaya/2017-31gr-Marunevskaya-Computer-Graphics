@@ -1,1 +1,1 @@
-include ':app', ':arcmodule', ':arcmenumodule'
+include ':app', ':arcmodule', ':arcmenumodule', ':simplearcmodule'

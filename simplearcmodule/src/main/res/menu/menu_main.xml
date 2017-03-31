@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="computer_graphics.simplearcmodule.MainActivity">
+    <item android:title="Алгоритмы">
+        <menu>
+            <item android:id="@+id/line_alg_menu" android:title="Рисование отрезка">
+                <menu>
+                    <item android:id="@+id/parametric_line_alg" android:title="Параметрический алгоритм"/>
+                    <item android:id="@+id/brezenham_line_alg" android:title="Алгоритм Брезенхема"/>
+                </menu>
+            </item>
+            <item android:id="@+id/circle_alg_menu" android:title="Рисование окружности">
+                <menu>
+                    <item android:id="@+id/parametric_circle_alg" android:title="Параметрический алгоритм"/>
+                    <item android:id="@+id/brezenham_circle_alg" android:title="Алгоритм Брезенхема"/>
+                </menu>
+            </item>
+            <item android:id="@+id/bezier_curve_alg_menu" android:title="Рисование кривой Безье"/>
+        </menu>
+    </item>
+    <item android:id="@+id/clear" android:title="Очистить"/>
+</menu>

@@ -53,8 +53,8 @@ public class ActivityForAlg extends AppCompatActivity implements View.OnTouchLis
                 for(int i=1; i<=360;i++) {
                     x1 = x2;
                     y1 = y2;
-                    x2 = (float) (R * sin(i * 1.0) + p1.x);
-                    y2 = (float) (R * cos(i * 1.0) + p1.y);
+                    x2 = (float) (R * sin(1.0*i) + p1.x);
+                    y2 = (float) (R * cos(1.0*i) + p1.y);
 
                     float absx=abs(x2-x1);
                     float absy=abs(y2-y1);

@@ -42,9 +42,6 @@ public class ActivityForAlg5 extends AppCompatActivity implements View.OnTouchLi
             p.setColor(Color.BLACK);
             p.setStrokeWidth(1);
             if(count==num) {
-                /*for(int i=0; i<num-1; i++){
-                    canvas.drawLine(points.get(i).x,points.get(i).y,points.get(i+1).x,points.get(i+1).y,p);
-                }*/
                 for(float t=0; t<=1; t+=0.00001){
                     PointF arr[]=new PointF[num];
                     for(int i=0; i<num; i++){
@@ -71,7 +68,7 @@ public class ActivityForAlg5 extends AppCompatActivity implements View.OnTouchLi
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 view.addPoint(event.getX(),event.getY());
-                i++;
+                i+=1;
                 if(i==num){
                     i=0;
                     view.invalidate();

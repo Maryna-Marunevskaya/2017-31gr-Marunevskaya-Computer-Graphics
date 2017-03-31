@@ -38,6 +38,30 @@ public class ActivityForAlg1 extends AppCompatActivity implements View.OnTouchLi
 
         @Override
         protected void onDraw(Canvas canvas) {
+            /*canvas.drawColor(Color.WHITE);
+            p.setColor(Color.BLACK);
+            p.setStrokeWidth(1);
+            if(count==2) {
+                float absx=abs(p2.x-p1.x);
+                float absy=abs(p2.y-p1.y);
+                float spec=absx;
+                if(absy>absx){
+                    spec=absy;
+                }
+                float dx=(p2.x-p1.x)/spec;
+                float dy=(p2.y-p1.y)/spec;
+                float x=p1.x,y=p1.y;
+                for(int i=0; i<=(int)spec;i++){
+                    canvas.drawPoint(x,y,p);
+                    x+=dx;
+                    y+=dy;
+                }
+                count=0;
+            }*/
+            drawAlg(canvas);
+        }
+
+        private void drawAlg(Canvas canvas){
             canvas.drawColor(Color.WHITE);
             p.setColor(Color.BLACK);
             p.setStrokeWidth(1);
@@ -59,6 +83,7 @@ public class ActivityForAlg1 extends AppCompatActivity implements View.OnTouchLi
                 count=0;
             }
         }
+
     }
     private DrawView view;
     private int i;
@@ -68,7 +93,7 @@ public class ActivityForAlg1 extends AppCompatActivity implements View.OnTouchLi
             case MotionEvent.ACTION_DOWN:
                 if(i==0){
                     view.setP1(event.getX(),event.getY());
-                    i++;
+                    i+=1;
                 }
                 else{
                     view.setP2(event.getX(),event.getY());
