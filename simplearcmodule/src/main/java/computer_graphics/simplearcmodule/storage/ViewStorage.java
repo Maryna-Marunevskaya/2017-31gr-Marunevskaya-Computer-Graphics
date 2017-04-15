@@ -9,7 +9,7 @@ public class ViewStorage {
         basicView=bv;
     }
 
-    public static BasicView getBasicView(){
+   public static BasicView getBasicView(){
         return basicView;
     }
 }

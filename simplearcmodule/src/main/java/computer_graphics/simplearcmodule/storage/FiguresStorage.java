@@ -18,7 +18,6 @@ public class FiguresStorage {
 
     public static void clear(){
         figures.clear();
-        CurrentPointsStorage.clear();
         ViewStorage.getBasicView().invalidate();
     }
 }

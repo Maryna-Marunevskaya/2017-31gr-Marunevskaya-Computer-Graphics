@@ -9,11 +9,11 @@ import computer_graphics.simplearcmodule.entity.figure.AbstractFigure;
 import computer_graphics.simplearcmodule.entity.figure.Circle;
 import computer_graphics.simplearcmodule.storage.CurrentPointsStorage;
 import computer_graphics.simplearcmodule.storage.FiguresStorage;
-import computer_graphics.simplearcmodule.tools.drawing.AbstractDrawing;
+import computer_graphics.simplearcmodule.storage.ToolsStorage;
 
 import static java.lang.Math.sqrt;
 
-public class BrezenhamCircleDrawing extends AbstractDrawing {
+public class BrezenhamCircleDrawing extends AbstractCircleDrawing {
     public BrezenhamCircleDrawing(){
         this.count=2;
     }
@@ -29,7 +29,7 @@ public class BrezenhamCircleDrawing extends AbstractDrawing {
 
         this.draw(p1, R, canvas);
 
-        FiguresStorage.addFigure(new Circle(4, p1.x, p1.y, R));
+        FiguresStorage.addFigure(new Circle(4,(int)this.paint.getStrokeWidth(), p1.x, p1.y, R, ToolsStorage.getFirstColor(), ToolsStorage.getSecondColor()));
         CurrentPointsStorage.clear();
     }
 
@@ -40,6 +40,8 @@ public class BrezenhamCircleDrawing extends AbstractDrawing {
         PointF center=circle.getCenter();
 
         float R=circle.getR();
+
+        this.paint.setStrokeWidth(circle.getBrushSize());
 
         this.draw(center, R, canvas);
     }
@@ -61,14 +63,7 @@ public class BrezenhamCircleDrawing extends AbstractDrawing {
                 f+=2*x+3;
             }
             x+=1;
-            canvas.drawPoint(center.x+x, center.y+y, this.paint);
-            canvas.drawPoint(center.x-x, center.y+y, this.paint);
-            canvas.drawPoint(center.x+x, center.y-y, this.paint);
-            canvas.drawPoint(center.x-x, center.y-y, this.paint);
-            canvas.drawPoint(center.x+y, center.y+x, this.paint);
-            canvas.drawPoint(center.x-y, center.y+x, this.paint);
-            canvas.drawPoint(center.x+y, center.y-x, this.paint);
-            canvas.drawPoint(center.x-y, center.y-x, this.paint);
+            this.drawPoints(center, x, y, canvas);
         }
     }
 }

@@ -3,7 +3,9 @@ package computer_graphics.simplearcmodule.tools.view;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -24,6 +26,9 @@ public class BasicView extends View {
         for(AbstractFigure figure: figures){
             ToolsStorage.getDrawing(figure.getAlg()).drawFigure(canvas, figure);
         }
+
+        ToolsStorage.returnBrushToBrushSize();
+        ToolsStorage.returnToBezierCurveCount();
 
         if(ToolsStorage.getDrawing().getCount()== CurrentPointsStorage.getCount()){
             ToolsStorage.getDrawing().drawAlg(canvas);

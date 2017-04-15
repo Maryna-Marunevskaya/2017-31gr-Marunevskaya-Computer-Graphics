@@ -9,11 +9,11 @@ import computer_graphics.simplearcmodule.entity.figure.AbstractFigure;
 import computer_graphics.simplearcmodule.entity.figure.Circle;
 import computer_graphics.simplearcmodule.storage.CurrentPointsStorage;
 import computer_graphics.simplearcmodule.storage.FiguresStorage;
-import computer_graphics.simplearcmodule.tools.drawing.AbstractDrawing;
+import computer_graphics.simplearcmodule.storage.ToolsStorage;
 
 import static java.lang.Math.sqrt;
 
-public class ParametricCircleDrawing extends AbstractDrawing {
+public class ParametricCircleDrawing extends AbstractCircleDrawing {
     public ParametricCircleDrawing(){
         this.count=2;
     }
@@ -29,7 +29,7 @@ public class ParametricCircleDrawing extends AbstractDrawing {
 
         this.draw(p1, R, canvas);
 
-        FiguresStorage.addFigure(new Circle(3, p1.x, p1.y, R));
+        FiguresStorage.addFigure(new Circle(3,(int)this.paint.getStrokeWidth(), p1.x, p1.y, R, ToolsStorage.getFirstColor(), ToolsStorage.getSecondColor()));
         CurrentPointsStorage.clear();
     }
 
@@ -41,6 +41,8 @@ public class ParametricCircleDrawing extends AbstractDrawing {
 
         float R=circle.getR();
 
+        this.paint.setStrokeWidth(circle.getBrushSize());
+
         this.draw(center, R, canvas);
     }
 
@@ -51,14 +53,7 @@ public class ParametricCircleDrawing extends AbstractDrawing {
 
         for(; x<=sp;x++) {
             y = (float) (sqrt(R * R - x * x));
-            canvas.drawPoint(center.x + x, center.y + y, this.paint);
-            canvas.drawPoint(center.x + y, center.y + x, this.paint);
-            canvas.drawPoint(center.x + y, center.y - x, this.paint);
-            canvas.drawPoint(center.x + x, center.y - y, this.paint);
-            canvas.drawPoint(center.x - x, center.y - y, this.paint);
-            canvas.drawPoint(center.x - y, center.y - x, this.paint);
-            canvas.drawPoint(center.x - y, center.y + x, this.paint);
-            canvas.drawPoint(center.x - x, center.y + y, this.paint);
+            this.drawPoints(center, x, y, canvas);
         }
     }
 }

@@ -9,6 +9,7 @@ import computer_graphics.simplearcmodule.entity.figure.AbstractFigure;
 import computer_graphics.simplearcmodule.entity.figure.Line;
 import computer_graphics.simplearcmodule.storage.CurrentPointsStorage;
 import computer_graphics.simplearcmodule.storage.FiguresStorage;
+import computer_graphics.simplearcmodule.storage.ToolsStorage;
 import computer_graphics.simplearcmodule.tools.drawing.AbstractDrawing;
 
 import static java.lang.Math.abs;
@@ -28,7 +29,7 @@ public class BrezenhamLineDrawing extends AbstractDrawing {
 
         this.draw(p1, p2, canvas);
 
-        FiguresStorage.addFigure(new Line(2, p1.x, p1.y, p2.x, p2.y));
+        FiguresStorage.addFigure(new Line(2,(int)this.paint.getStrokeWidth(), p1.x, p1.y, p2.x, p2.y, ToolsStorage.getFirstColor(), ToolsStorage.getSecondColor()));
 
         CurrentPointsStorage.clear();
     }
@@ -37,8 +38,10 @@ public class BrezenhamLineDrawing extends AbstractDrawing {
     public void drawFigure(Canvas canvas, AbstractFigure figure){
         Line line=(Line)figure;
 
-        PointF p1=line.getP1();
-        PointF p2=line.getP2();
+        PointF p1=line.getFirstPoint();
+        PointF p2=line.getSecondPoint();
+
+        this.paint.setStrokeWidth(line.getBrushSize());
 
         this.draw(p1, p2, canvas);
     }

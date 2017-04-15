@@ -4,20 +4,39 @@
     tools:context="computer_graphics.simplearcmodule.MainActivity">
     <item android:title="Алгоритмы">
         <menu>
-            <item android:id="@+id/line_alg_menu" android:title="Рисование отрезка">
+            <item android:title="Рисование отрезка">
                 <menu>
-                    <item android:id="@+id/parametric_line_alg" android:title="Параметрический алгоритм"/>
-                    <item android:id="@+id/brezenham_line_alg" android:title="Алгоритм Брезенхема"/>
+                    <item
+                        android:id="@+id/parametric_line_alg" android:title="Параметрический алгоритм" />
+                    <item
+                        android:id="@+id/brezenham_line_alg" android:title="Алгоритм Брезенхема" />
                 </menu>
             </item>
-            <item android:id="@+id/circle_alg_menu" android:title="Рисование окружности">
+            <item android:title="Рисование окружности">
                 <menu>
-                    <item android:id="@+id/parametric_circle_alg" android:title="Параметрический алгоритм"/>
-                    <item android:id="@+id/brezenham_circle_alg" android:title="Алгоритм Брезенхема"/>
+                    <item
+                        android:id="@+id/parametric_circle_alg" android:title="Параметрический алгоритм" />
+                    <item
+                        android:id="@+id/brezenham_circle_alg" android:title="Алгоритм Брезенхема" />
                 </menu>
             </item>
-            <item android:id="@+id/bezier_curve_alg_menu" android:title="Рисование кривой Безье"/>
+            <item
+                android:id="@+id/bezier_curve_alg_menu" android:title="Рисование кривой Безье" />
         </menu>
     </item>
-    <item android:id="@+id/clear" android:title="Очистить"/>
+    <item android:title="Настройки кисти">
+        <menu>
+            <item android:id="@+id/brush_size" android:title="Размер" />
+            <item android:title="Цвет">
+                <menu>
+                    <item android:id="@+id/use_two_color" android:title="Использовать два цвета" android:checkable="true"/>
+                    <item android:id="@+id/one_color" android:title="Выбрать один цвет" />
+                    <item android:id="@+id/two_color" android:title="Выбрать два цвета" />
+                </menu>
+            </item>
+        </menu>
+    </item>
+    <item android:id="@+id/clear_current" android:title="Сброс" />
+    <item
+        android:id="@+id/clear" android:title="Очистка" />
 </menu>
