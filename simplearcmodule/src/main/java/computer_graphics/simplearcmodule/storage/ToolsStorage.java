@@ -64,12 +64,14 @@ public class ToolsStorage {
     }
 
     public static void setBezierCurveCount(int count){
-        bezierCurveCount=count;
-        ((BezierCurveDrawing)drawingTools.get(5)).setCount(bezierCurveCount);
         if(bezierCurveCount<2){
             bezierCurveCount=2;
             Toast.makeText(ViewStorage.getBasicView().getContext(), "Количество точек кривой Безье должно быть >=2", Toast.LENGTH_LONG).show();
         }
+        else{
+            bezierCurveCount=count;
+        }
+        ((BezierCurveDrawing)drawingTools.get(5)).setCount(bezierCurveCount);
     }
 
     public static void returnToCurrentBezierCurveCount(){
