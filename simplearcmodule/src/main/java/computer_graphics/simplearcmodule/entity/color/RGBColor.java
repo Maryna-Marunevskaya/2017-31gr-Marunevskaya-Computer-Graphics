@@ -37,13 +37,13 @@ public class RGBColor {
         this.blue=blue;
     }
 
+    public int getColor(){
+        return Color.rgb(this.red, this.green, this.blue);
+    }
+
     public void setColor(int red, int green, int blue){
         this.red=red;
         this.green=green;
         this.blue=blue;
-    }
-
-    public int getColor(){
-        return Color.rgb(this.red, this.green, this.blue);
     }
 }

@@ -1,4 +1,4 @@
-package computer_graphics.simplearcmodule.tools.touchlistener;
+package computer_graphics.simplearcmodule.tools.listener;
 
 import android.view.MotionEvent;
 import android.view.View;

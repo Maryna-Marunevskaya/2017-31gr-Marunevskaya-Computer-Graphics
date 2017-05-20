@@ -1,25 +1,24 @@
-package computer_graphics.simplearcmodule.tools.drawing.linealgorithms;
+package computer_graphics.simplearcmodule.tools.drawing.headalgorithms;
 
 import android.graphics.Canvas;
-import android.graphics.PointF;
 
 import static java.lang.Math.abs;
 import static java.lang.Math.signum;
 
-public class BrezenhamLineDrawing extends AbstractLineDrawing {
-    public BrezenhamLineDrawing(){
-        this.count=2;
-        this.alg=2;
+public class BrezenhamHeadDrawing extends AbstractHeadDrawing {
+    public BrezenhamHeadDrawing(){
+        this.count=0;
+        this.alg=7;
     }
     @Override
-    protected void draw(PointF p1, PointF p2, Canvas canvas){
-        int x=Math.round(p1.x);
-        int y=Math.round(p1.y);
+    protected void draw(float x1, float y1, float x2, float y2, Canvas canvas){
+        int x=Math.round(x1);
+        int y=Math.round(y1);
 
-        int dx=Math.round(abs(p2.x-p1.x));
-        int dy=Math.round(abs(p2.y-p1.y));
-        int s1=Math.round(signum(p2.x-p1.x));
-        int s2=Math.round(signum(p2.y-p1.y));
+        int dx=Math.round(abs(x2-x1));
+        int dy=Math.round(abs(y2-y1));
+        int s1=Math.round(signum(x2-x1));
+        int s2=Math.round(signum(y2-y1));
         boolean change=false;
 
         if(dy>dx){

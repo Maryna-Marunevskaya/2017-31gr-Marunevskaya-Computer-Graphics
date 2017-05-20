@@ -21,6 +21,13 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/cr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Пятиугольник"
+                android:textAllCaps="false" />
+
+            <Button
                 android:id="@+id/button1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

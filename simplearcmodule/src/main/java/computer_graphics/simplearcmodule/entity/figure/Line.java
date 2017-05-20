@@ -7,12 +7,12 @@ import computer_graphics.simplearcmodule.entity.color.RGBColor;
 public class Line extends AbstractFigure{
     private PointF firstPoint, secondPoint;
 
-    public Line(int alg, int brushSize, float x1, float y1, float x2, float y2, RGBColor firstColor, RGBColor secondColor){
+    public Line(int alg, int brushSize, PointF firstPoint, PointF secondPoint, RGBColor firstColor, RGBColor secondColor){
         this.alg=alg;
         this.brushSize=brushSize;
 
-        this.firstPoint =new PointF(x1,y1);
-        this.secondPoint =new PointF(x2,y2);
+        this.firstPoint =new PointF(firstPoint.x, firstPoint.y);
+        this.secondPoint =new PointF(secondPoint.x, secondPoint.y);
 
         this.firstColor=new RGBColor(firstColor.getRed(), firstColor.getGreen(), firstColor.getBlue());
         this.secondColor=new RGBColor(secondColor.getRed(), secondColor.getGreen(), secondColor.getBlue());

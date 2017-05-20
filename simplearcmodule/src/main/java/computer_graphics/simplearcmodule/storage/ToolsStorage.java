@@ -1,6 +1,7 @@
 package computer_graphics.simplearcmodule.storage;
 
 import android.graphics.Paint;
+import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,6 +11,8 @@ import computer_graphics.simplearcmodule.tools.drawing.AbstractDrawing;
 import computer_graphics.simplearcmodule.tools.drawing.beziercurvealgorithms.BezierCurveDrawing;
 import computer_graphics.simplearcmodule.tools.drawing.circlealgorithms.BrezenhamCircleDrawing;
 import computer_graphics.simplearcmodule.tools.drawing.circlealgorithms.ParametricCircleDrawing;
+import computer_graphics.simplearcmodule.tools.drawing.headalgorithms.BrezenhamHeadDrawing;
+import computer_graphics.simplearcmodule.tools.drawing.headalgorithms.ParametricHeadDrawing;
 import computer_graphics.simplearcmodule.tools.drawing.linealgorithms.BrezenhamLineDrawing;
 import computer_graphics.simplearcmodule.tools.drawing.linealgorithms.ParametricLineDrawing;
 
@@ -34,6 +37,11 @@ public class ToolsStorage {
         drawingTools.get(4).setPaint(brush);
         drawingTools.put(5, new BezierCurveDrawing());
         drawingTools.get(5).setPaint(brush);
+
+        drawingTools.put(6, new ParametricHeadDrawing());
+        drawingTools.get(6).setPaint(brush);
+        drawingTools.put(7, new BrezenhamHeadDrawing());
+        drawingTools.get(7).setPaint(brush);
     }
 
     public static void setCurrentAlgorithm(int ca){
@@ -50,12 +58,26 @@ public class ToolsStorage {
         brush.setStrokeWidth(brushSize);
     }
 
-    public static void returnBrushToBrushSize(){
+    public static void returnBrushToCurrentBrushSize(){
+
         brush.setStrokeWidth(brushSize);
     }
 
-    public static void returnToBezierCurveCount(){
+    public static void setBezierCurveCount(int count){
+        bezierCurveCount=count;
         ((BezierCurveDrawing)drawingTools.get(5)).setCount(bezierCurveCount);
+        if(bezierCurveCount<2){
+            bezierCurveCount=2;
+            Toast.makeText(ViewStorage.getBasicView().getContext(), "Количество точек кривой Безье должно быть >=2", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public static void returnToCurrentBezierCurveCount(){
+        ((BezierCurveDrawing)drawingTools.get(5)).setCount(bezierCurveCount);
+    }
+
+    public static void returnToCurrentBrushColor(){
+        brush.setColor(firstColor.getColor());
     }
 
     public static RGBColor getFirstColor(){
@@ -64,6 +86,7 @@ public class ToolsStorage {
 
     public static void setFirstColor(int red, int green, int blue){
         firstColor.setColor(red, green, blue);
+        brush.setColor(firstColor.getColor());
     }
 
     public static RGBColor getSecondColor(){

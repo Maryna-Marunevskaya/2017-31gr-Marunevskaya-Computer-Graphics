@@ -24,6 +24,14 @@
                 android:id="@+id/bezier_curve_alg_menu" android:title="Рисование кривой Безье" />
         </menu>
     </item>
+    <item android:title="Obj">
+        <menu>
+        <item android:id="@+id/load_head_file" android:title="Загрузить голову" />
+        <item android:id="@+id/test_algorithms" android:title="Сравнение алгоритмов" />
+        <item android:id="@+id/parametric_draw_head" android:title="Нарисовать параметрическим алгоритмом" />
+        <item android:id="@+id/brezenham_draw_head" android:title="Нарисовать алгоритмом Брезенхема" />
+        </menu>
+    </item>
     <item android:title="Настройки кисти">
         <menu>
             <item android:id="@+id/brush_size" android:title="Размер" />

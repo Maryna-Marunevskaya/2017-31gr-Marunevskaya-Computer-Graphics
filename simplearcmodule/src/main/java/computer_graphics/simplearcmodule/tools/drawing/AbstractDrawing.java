@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import computer_graphics.simplearcmodule.entity.figure.AbstractFigure;
 
 public abstract class AbstractDrawing {
-    protected int count;
+    protected int count, alg;
     protected Paint paint;
 
     public void setPaint(Paint paint){
